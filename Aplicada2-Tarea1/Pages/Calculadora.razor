@@ -1,0 +1,30 @@
+﻿@page "/Calculadora"
+<h3>Calculadora</h3>
+<h5>Esta calculadora nos permite dado dos numeros obtener su suma, resta y multiplicación</h5>
+
+<br />
+
+<p>Primer Número: &nbsp; &nbsp;  <input id="Numero1" type="text" @bind="primerNumero" @bind:event="oninput" /> </p>
+<p>Segundo Número: <input id="Numero2" type="text" @bind="segundoNumero" @bind:event="oninput" /> </p>
+
+
+<p>La suma es: @resultadoSuma</p>
+<p>La resta es: @resultadoResta</p>
+<p>La multiplicación es: @resultadoMultiplicacion</p>
+
+<button class="btn btn-primary" @onclick="MostrarResultado"> Calcular </button>
+
+
+@code
+{
+    private float primerNumero, segundoNumero, resultadoSuma, resultadoResta, resultadoMultiplicacion;
+
+
+    private void MostrarResultado()
+    {
+        resultadoSuma = primerNumero + segundoNumero;
+        resultadoResta = primerNumero - segundoNumero;
+        resultadoMultiplicacion = primerNumero * segundoNumero;
+    }
+
+}
